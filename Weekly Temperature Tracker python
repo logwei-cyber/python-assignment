@@ -1,0 +1,25 @@
+temperatures = []
+days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+
+# Input temperatures for each day
+for day in days:
+    while True:
+        try:
+            temp = float(input(f"Enter temperature for {day}: "))
+            temperatures.append(temp)
+            break
+        except ValueError:
+            print("⚠️ Please enter a valid number.")
+
+# Analysis
+lowest_temp = min(temperatures)
+highest_temp = max(temperatures)
+sum_temp = sum(temperatures)
+avg_temp = sum_temp / len(temperatures)
+
+# Output results
+print("\n--- Weekly Temperature Summary ---")
+print(f"Lowest Temperature: {lowest_temp}°C")
+print(f"Highest Temperature: {highest_temp}°C")
+print(f"Total Temperature: {sum_temp}°C")
+print(f"Average Temperature: {avg_temp:.2f}°C")
